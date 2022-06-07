@@ -22,13 +22,13 @@ class _ReadDataPageState extends State<ReadDataPage> {
   void _getData() async {
     _userModel = (await ApiService().getUsers())!;
 
-    Future.delayed(const Duration(seconds: 1)).then((value) => setState(() {}));
+    Future.delayed(const Duration(seconds: 0)).then((value) => setState(() {}));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("reading data example")),
+      appBar: AppBar(title: const Text("استلام بيانات وعرضها ")),
       body: _userModel == null || _userModel!.isEmpty
           ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
@@ -81,3 +81,6 @@ class _ReadDataPageState extends State<ReadDataPage> {
     );
   }
 }
+
+
+//? checkout visibility wedgit
